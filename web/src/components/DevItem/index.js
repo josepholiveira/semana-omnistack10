@@ -2,6 +2,8 @@ import React from "react";
 
 import "./styles.css";
 
+import { MdDelete } from "react-icons/md";
+
 export default function DevItem({ dev, handleRemove }) {
   return (
     <li className="dev-item">
@@ -14,7 +16,7 @@ export default function DevItem({ dev, handleRemove }) {
           </div>
         </div>
         <button type="button" onClick={() => handleRemove(dev._id)}>
-          Remover
+          <MdDelete size={24} color="#ED254E" />
         </button>
       </header>
       <p>{dev.bio}</p>
