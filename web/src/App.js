@@ -13,6 +13,15 @@ function App() {
   async function handleAddDev(data) {
     const response = await api.post("/devs", data);
 
+    const devExists = devs.find(
+      dev => dev.github_username === data.github_username
+    );
+
+    if (devExists) {
+      console.log("Usuário já cadastrado");
+      return;
+    }
+
     setDevs([...devs, response.data]);
   }
 
