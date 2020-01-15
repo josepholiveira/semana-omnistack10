@@ -25,6 +25,15 @@ function App() {
     setDevs([...devs, response.data]);
   }
 
+  async function handleRemoveDev(id) {
+    const response = await api.delete(`/devs/${id}`);
+
+    if (response.data) {
+      const filteredDevs = devs.filter(dev => dev._id !== id);
+      setDevs(filteredDevs);
+    }
+  }
+
   useEffect(() => {
     async function loadDevs() {
       const response = await api.get("/devs");
@@ -44,7 +53,7 @@ function App() {
       <main>
         <ul>
           {devs.map(dev => (
-            <DevItem key={dev._id} dev={dev} />
+            <DevItem key={dev._id} dev={dev} handleRemove={handleRemoveDev} />
           ))}
         </ul>
       </main>
