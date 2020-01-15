@@ -8,14 +8,18 @@ export default function DevItem({ dev, handleRemove }) {
   return (
     <li className="dev-item">
       <header>
-        <div>
+        <div className="header-info">
           <img src={dev.avatar_url} alt={dev.name} />
           <div className="user-info">
             <strong>{dev.name}</strong>
             <span>{dev.techs.join(", ")}</span>
           </div>
         </div>
-        <button type="button" onClick={() => handleRemove(dev._id)}>
+        <button
+          type="button"
+          className="remove-button"
+          onClick={() => handleRemove(dev._id)}
+        >
           <MdDelete size={24} color="#ED254E" />
         </button>
       </header>

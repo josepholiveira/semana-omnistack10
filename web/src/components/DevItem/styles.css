@@ -8,7 +8,12 @@ li.dev-item {
 li.dev-item header {
   display: flex;
   flex-direction: row;
-  align-items: center;
+  justify-content: space-between;
+}
+
+li.dev-item header .header-info {
+  display: flex;
+  flex-direction: row;
 }
 
 li.dev-item header img {
@@ -50,4 +55,10 @@ li.dev-item a:hover {
   color: #5a2ea6;
   font-size: 14px;
   text-decoration: none;
+}
+
+.remove-button {
+  background: none;
+  border: 0;
+  cursor: pointer;
 }
