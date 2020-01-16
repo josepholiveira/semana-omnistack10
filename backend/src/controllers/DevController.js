@@ -45,9 +45,11 @@ module.exports = {
     const { id } = req.params;
     const { techs, latitude, longitude } = req.body;
 
-    const data = {
-      latitude,
-      longitude
+    let data = {
+      location: {
+        type: "Point",
+        coordinates: [longitude, latitude]
+      }
     };
 
     if (techs) {
@@ -55,6 +57,7 @@ module.exports = {
       data.techs = techsArray;
     }
 
+    console.log(req.body);
     const dev = await Dev.findByIdAndUpdate(id, data, { new: true });
 
     if (!dev) {
