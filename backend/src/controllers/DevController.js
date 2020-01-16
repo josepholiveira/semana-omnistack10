@@ -57,7 +57,6 @@ module.exports = {
       data.techs = techsArray;
     }
 
-    console.log(req.body);
     const dev = await Dev.findByIdAndUpdate(id, data, { new: true });
 
     if (!dev) {

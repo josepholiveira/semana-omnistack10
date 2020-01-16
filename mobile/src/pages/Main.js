@@ -59,7 +59,7 @@ export default function Main({ navigation }) {
       }
     });
 
-    setDevs(response.data.devs);
+    setDevs(response.data);
   }
 
   function handleRegionChanged(region) {
