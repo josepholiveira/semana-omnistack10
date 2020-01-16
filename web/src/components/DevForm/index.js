@@ -19,7 +19,8 @@ export default function DevForm({ onSubmit }) {
         console.log(err);
       },
       {
-        timeout: 30000
+        timeout: 30000,
+        enableHighAccuracy: true
       }
     );
   }, []);
